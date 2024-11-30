@@ -2,3 +2,73 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  #root {
+    font-family: "Nunito Sans";
+    color: #bbbaa6;
+    flex-direction: column;
+  }
+
+  body {
+    @apply antialiased select-none;
+    background-color: #161616;
+  }
+
+  main {
+    @apply overflow-x-hidden relative;
+  }
+
+  section {
+    @apply flex flex-col items-center justify-center h-screen py-[3rem] px-[1rem] max-w-[1280px] mx-auto select-none;
+  }
+
+  h1 {
+    @apply text-[2rem] md:text-[3rem] font-black;
+    line-height: 1.3;
+  }
+
+  h2 {
+    @apply text-[1rem] md:text-[2rem];
+    line-height: 1;
+  }
+
+  p {
+    @apply text-[0.5rem] md:text-[1rem];
+    line-height: 1.5;
+  }
+
+  li {
+    @apply text-[1rem] md:text-[2rem];
+    line-height: 1.5;
+  }
+
+  button {
+    @apply flex items-center justify-center gap-[0.5rem];
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #1a1a1a; 
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #0ae448; 
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #08c838;
+  } 
+}
+
+:root {
+  --color-primary: #0ae448;
+  --color-accent: #fffce1; 
+}
