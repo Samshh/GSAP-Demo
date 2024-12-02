@@ -19,14 +19,15 @@ export default function ScrollTriggerComponent() {
         trigger: triggerRef.current, // trigger the animation when the page is in view
         start: "top center", // start the animation when the top of the element is in the center of the viewport
         end: "bottom center", // end the animation when the bottom of the element is in the center of the viewport
-        toggleActions: "play none none reverse", // play the animation when the element is in view, reverse it when it leaves the view
+        toggleActions: "play none none reset", // play the animation when the element is in view, reset it when it leaves the view
         scrub: false, // when true the animation will be based on scroll and you can remove the duration and toggleActions
         markers: false, // true to show markers for debugging
       },
-      onComplete: () => {
+      onComplete: () => { // return the element to its original state
         gsap.to(circleRef.current, {
-          duration: 4,
-          opacity: 0.75,
+          duration: 2,
+          opacity: 1,
+          scale: 1,
         });
       },
     });
@@ -36,8 +37,9 @@ export default function ScrollTriggerComponent() {
       className="h-full min-h-screen w-full grid grid-cols-2 items-center overflow-hidden p-[1rem] gap-[1rem]"
       ref={triggerRef}
     >
-      <div className="w-full flex justify-center items-center">
+      <div className="w-full flex flex-col justify-center items-center">
         <h1>ScrollTrigger</h1>
+        <h2>Trigger animation on viewport</h2>
       </div>
       <div className="w-full flex justify-center items-center">
         <div

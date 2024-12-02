@@ -1,3 +1,4 @@
+import GsapTo from "./animations/gsapTo/gsapTo";
 import ScrollTriggerComponent from "./animations/scrollTrigger/scrollTrigger";
 
 export default function App() {
@@ -25,6 +26,7 @@ export default function App() {
         <rect width="100%" height="100%" filter="url(#noise)" opacity="0.05" />
       </svg>
       <div>
+        <GsapTo />
         <ScrollTriggerComponent />
       </div>
     </main>
